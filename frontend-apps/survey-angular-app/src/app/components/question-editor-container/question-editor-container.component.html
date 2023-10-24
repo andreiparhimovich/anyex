@@ -1,0 +1,19 @@
+<div class="question-editor-container" @slideAnimation>
+    <div class="question-editor-container-header">
+        <p-dropdown [options]="questionTypes" [(ngModel)]="selectedQuestionType" optionLabel="label"></p-dropdown>
+    </div>
+    <div class="question-editor-container-content">
+        <div *ngIf="selectedQuestionType.value === QuestionType.SingleChoice">
+            <app-single-choice-question-editor (submit)="onSubmit($event)"></app-single-choice-question-editor>
+        </div>
+        <div *ngIf="selectedQuestionType.value === QuestionType.MultipleChoice">
+            <app-multiple-choice-question-editor (submit)="onSubmit($event)"></app-multiple-choice-question-editor>
+        </div>
+        <div *ngIf="selectedQuestionType.value === QuestionType.Rating">
+            <app-rating-question-editor (submit)="onSubmit($event)"></app-rating-question-editor>
+        </div>
+        <div *ngIf="selectedQuestionType.value === QuestionType.FreeText">
+            <app-free-text-question-editor (submit)="onSubmit($event)"></app-free-text-question-editor>
+        </div>
+    </div>
+</div>

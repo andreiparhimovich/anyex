@@ -1,0 +1,54 @@
+<div class="survey-results-container">
+
+    <div *ngIf="isSurveyResultsLoading" style="align-self: center;">
+        <p-progressSpinner></p-progressSpinner>
+    </div>
+
+    <div *ngIf="!isSurveyResultsLoading && isPinCodeRequired && !isPinCodeProvided">
+        <app-survey-results-pincode [isLoading]="isPinCodeVerifying" [isPinCodeInvalid]="isPinCodeInvalid"
+            (verifyPinCodeClick)="verifyPinCodeClick($event)"></app-survey-results-pincode>
+    </div>
+
+    <div *ngIf="!isSurveyResultsLoading && (!isPinCodeRequired || isPinCodeProvided)">
+        <div *ngIf="surveyResults">
+
+
+            <div class="survey-results-title">
+                <div style="width: 100px; height: 5px; background-color: #a72a56"></div>
+                <div>ONLINE SURVEY RESULTS</div>
+                <div style="font-size: 1rem; color: #495057;">{{surveyResults.surveyTitle}}</div>
+            </div>
+
+            <div class="survey-results-tiles">
+                <div class="tile">
+                    <div style="font-size: 2rem; color: #a72a56;">{{surveyResults.results.length}}</div>
+                    <div>questions</div>
+                </div>
+                <div class="tile">
+                    <div style="font-size: 2rem; color: #a72a56;">{{surveyResults.numberOfSubmits}}</div>
+                    <div>submits</div>
+                </div>
+            </div>
+
+            <div *ngFor="let questionResult of surveyResults.results" [ngSwitch]="questionResult.questionType">
+                <div style="margin-top: 10px;">
+                    <app-choice-question-result *ngSwitchCase="QuestionType.MultipleChoice"
+                        [questionResult]="questionResult"></app-choice-question-result>
+                </div>
+                <div style="margin-top: 10px;">
+                    <app-choice-question-result *ngSwitchCase="QuestionType.SingleChoice"
+                        [questionResult]="questionResult"></app-choice-question-result>
+                </div>
+                <div style="margin-top: 10px;">
+                    <app-rating-question-result *ngSwitchCase="QuestionType.Rating"
+                        [questionResult]="questionResult"></app-rating-question-result>
+                </div>
+                <div style="margin-top: 10px;">
+                    <app-free-text-question-result *ngSwitchCase="QuestionType.FreeText"
+                        [questionResult]="questionResult"></app-free-text-question-result>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>

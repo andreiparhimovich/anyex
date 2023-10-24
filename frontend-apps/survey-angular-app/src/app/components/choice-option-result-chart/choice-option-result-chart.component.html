@@ -1,0 +1,17 @@
+<div>
+    <div>
+        <span>{{optionText}}</span>
+    </div>
+
+    <div class="multiple-choice-option-result-chart">
+        <div class="multiple-choice-option-result-chart-block">
+            <div class="multiple-choice-option-result-chart-percentage-block" [style.width]="percentage + '%'">
+                <span *ngIf="percentage > 5" class="multiple-choice-option-result-chart-percentage-block-value">
+                    {{percentage}}%
+                </span>
+            </div>
+            <span style="margin-left: 10px; color: #a72a56" *ngIf="percentage <= 5">{{percentage}} %</span>
+        </div>
+        <span class="multiple-choice-option-result-chart-amount" @appearanceAnimation>{{answersAmount}}</span>
+    </div>
+</div>

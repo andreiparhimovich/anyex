@@ -1,0 +1,26 @@
+<div class="free-text-answer-container">
+    <div class="free-text-answer-header-container">
+        <div class="index-number">
+            <p-badge [value]="question.indexNumber.toString()"></p-badge>
+        </div>
+        <div class="question-type">
+            {{questionType}}
+        </div>
+    </div>
+
+    <div style="margin: 20px 0px;">
+        <div class="free-text-answer-text">
+            {{question.text}}
+        </div>
+
+        <form [formGroup]="freeTextFormGroup">
+            <div class="free-text-answer-text-input">
+                <textarea rows="3" pInputTextarea formControlName="answerText"></textarea>
+                <small class="p-error" *ngIf="answerText?.errors?.['maxlength']">
+                    Length must be less than 1000
+                </small>
+            </div>
+        </form>
+    </div>
+
+</div>

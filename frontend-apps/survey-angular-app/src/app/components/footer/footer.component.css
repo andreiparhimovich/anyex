@@ -1,0 +1,33 @@
+.footer {
+    margin-top: 200px;
+    background-color: #a72a56 ;
+    padding: 20px;
+    color: white;
+}
+
+.footer .logo {
+    float: left;
+}
+
+.footer .links {
+    float: left;
+    margin-left: 20px;
+    margin-top: 15px;
+}
+
+.footer .links .link {
+    display: block;
+    color: white;
+    text-decoration: none;
+    margin-bottom: 10px;
+}
+
+.footer .links .link:hover {
+    text-decoration: underline;
+}
+
+@media (max-width: 700px) {
+    .footer .logo {
+        display: none;
+    }
+}

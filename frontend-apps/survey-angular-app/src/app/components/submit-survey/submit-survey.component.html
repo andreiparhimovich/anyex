@@ -1,0 +1,43 @@
+<div class="submit-survey-container">
+
+    <div *ngIf="isSurveyLoading" class="submit-survey-progress-spinner">
+        <p-progressSpinner></p-progressSpinner>
+    </div>
+
+    <div *ngIf="!isSurveyLoading && surveyIsExpired" class="submit-survey-expired">
+        <div><i class="pi pi-info-circle"></i></div>
+        <div>We are sorry but the survey has expired</div>
+        <div style="margin-top: 40px;">
+            <button pButton type="button" class="p-button-raised p-button-success" label="Go Back to Home"
+                (click)="goToHome()"></button>
+        </div>
+    </div>
+
+    <div *ngIf="!isSurveyLoading && !surveyIsExpired">
+        <div>
+            <div class="submit-survey-title">
+                <div style="width: 100px; height: 5px; background-color: #a72a56"></div>
+                <div>SUBMIT THE SURVEY</div>
+                <div style="font-size: 1rem; color: #495057;">{{survey.title}}</div>
+            </div>
+        </div>
+
+        <div *ngIf="survey.description" class="submit-survey-description">
+            <div style="font-size: 0.85rem; font-weight: 700;">Description</div>
+            <div style="font-size: 0.85rem; font-style: italic;">{{survey.description}}</div>
+        </div>
+
+        <app-survey-answers-container *ngIf="!isSurveySubmitted" [questions]="survey.questions"
+            [isSurveySubmitting]="isSurveySubmitting"
+            (onAnswersSubmit)="onAnswersSubmit($event)"></app-survey-answers-container>
+
+        <div class="submit-survey-success-info-container" *ngIf="isSurveySubmitted">
+            <div class="submit-survey-success-info">
+                <div><i class="pi pi-check-circle"></i></div>
+                <div>Your answers have been sent successfully!</div>
+            </div>
+            <button pButton label="Open Results" icon="pi pi-external-link" class="p-button-raised action-button"
+                (click)="goToResults()"></button>
+        </div>
+    </div>
+</div>

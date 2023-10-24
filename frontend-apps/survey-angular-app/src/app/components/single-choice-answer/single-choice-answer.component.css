@@ -1,0 +1,96 @@
+.single-choice-answer-container {
+  min-height: 100px;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+}
+
+.single-choice-answer-header-container {
+  width: 100%;
+  padding: 5px;
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid #dee2e6;
+}
+
+.single-choice-answer-header-container .index-number {
+  flex: 0 0 auto;
+  margin-left: 10px;
+  height: fit-content;
+}
+
+:host ::ng-deep .single-choice-answer-header-container .index-number .p-badge {
+  background-color: #5cb85c;
+}
+
+.single-choice-answer-header-container .question-type {
+  flex: 0 0 auto;
+  margin-left: 10px;
+  color: #495057;
+}
+
+.single-choice-answer-text {
+  margin: 10px 10px 10px 50px;
+  color: #495057;
+  overflow: hidden;
+  word-wrap: break-word;
+  font-weight: 700;
+}
+
+.single-choice-answer-options-container {
+  margin: 0 10px 10px 45px;
+  display: flex;
+  flex-direction: column;
+  color: #495057;
+}
+
+.single-choice-answer-option {
+  margin: 5px;
+  width: 100%;
+}
+
+:host ::ng-deep .single-choice-answer-option .p-togglebutton {
+  text-align: left;
+}
+
+:host ::ng-deep .single-choice-answer-option .p-togglebutton.p-button:focus {
+  box-shadow: none;
+}
+
+:host ::ng-deep .single-choice-answer-option .p-togglebutton.p-button.p-highlight {
+  background: #5cb85c;
+  border-color: #5cb85c;
+  color: #ffffff;
+}
+
+:host ::ng-deep .single-choice-answer-option .p-togglebutton.p-button.p-highlight:hover {
+  background: #53b453;
+  border-color: #53b453;
+  color: #ffffff;
+}
+
+@media (max-width: 600px) {
+  .single-choice-answer-text {
+    margin-left: 10px;
+  }
+
+  .single-choice-answer-options-container {
+    margin-left: 5px;
+  }
+
+  :host ::ng-deep .single-choice-answer-option .p-togglebutton {
+    width: 100% !important;
+  }
+
+  :host ::ng-deep .single-choice-answer-option .p-togglebutton.p-button.p-highlight:hover {
+    background: #5cb85c;
+    border-color: #5cb85c;
+    color: #ffffff;
+  }
+
+  :host ::ng-deep .single-choice-answer-option .p-togglebutton.p-button:not(.p-disabled):not(.p-highlight):hover {
+    background: #ffffff;
+    border-color: #495057;
+    color: #495057;
+  }
+}

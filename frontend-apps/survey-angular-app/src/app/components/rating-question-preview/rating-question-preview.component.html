@@ -1,0 +1,22 @@
+<div class="rating-question-preview-container">
+
+    <div class="rating-question-preview-header-container">
+        <div class="index-number">
+            <p-badge [value]="question.indexNumber.toString()"></p-badge>
+        </div>
+        <div class="question-type">
+            {{questionType}}
+        </div>
+        <div class="rating-question-preview-header-menu">
+            <button pButton pRipple type="button" icon="pi pi-times"
+                class="p-button-rounded p-button-danger p-button-text" (click)="onDelete()"></button>
+        </div>
+    </div>
+
+    <div class="rating-question-preview-text">{{ question.text }}</div>
+
+    <div class="rating-question-preview-stars-container">
+        <p-rating *ngIf="maxRating" [(ngModel)]="maxRating" [readonly]="true" [cancel]="false"
+            [stars]="10"></p-rating>
+    </div>
+</div>

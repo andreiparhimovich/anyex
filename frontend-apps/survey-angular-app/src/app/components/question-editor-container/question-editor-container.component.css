@@ -1,0 +1,22 @@
+.question-editor-container {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid #2a56a7;
+    border-radius: 4px 4px 0 0;
+    box-shadow: 4px 4px 8px 0 rgba(0, 0, 0, 0.6);
+    max-width: 600px;
+    margin: 15px auto;
+}
+
+.question-editor-container-header {
+    padding: 10px;
+    background-color: #2a56a7;
+}
+
+:host ::ng-deep .question-editor-container-header .p-dropdown {
+    width: 200px;
+}
+
+.question-editor-container-content {
+    padding: 20px;
+}

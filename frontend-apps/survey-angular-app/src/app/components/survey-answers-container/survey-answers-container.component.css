@@ -1,0 +1,35 @@
+.survey-answers-container {
+    margin: 0 auto;
+    max-width: 700px;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .survey-answers-item-container {
+    border: 1px solid #dee2e6;
+    border-radius: 4px 4px 4px 4px;
+    box-shadow: 1px 1px 4px 2px rgba(0, 0, 0, 0.15);
+    margin: 10px 0px;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .survey-answers-item-bottom-info-container {
+    height: 50px;
+    border-radius: 0 0 4px 4px;
+    box-shadow: 1px 1px 1px 1px rgba(42, 86, 167);
+    background-color: #2a56a7;
+    color: #ffffff;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .survey-answers-item {
+    width: 100%;
+  }
+  
+  .survey-answers-container-controls {
+    margin: 10px;
+  }

@@ -1,0 +1,26 @@
+<p>test works!</p>
+
+<div class="test-container">
+    <div *ngFor="let option of options" class="multiple-choice-result-option">
+
+        <div>
+            <span>{{option.optionText}}</span>
+        </div>
+
+        <div class="multiple-choice-result-chart">
+            <div class="multiple-choice-result-chart-block">
+                <div class="multiple-choice-result-chart-percentage-block"
+                    [style.width]="option.percentage + '%'">
+                    <span *ngIf="option.percentage > 5"
+                        class="multiple-choice-result-chart-percentage-block-value">{{option.percentage}} %</span>
+                </div>
+                <span style="margin-left: 10px;" *ngIf="option.percentage <= 5">{{option.percentage}} %</span>
+            </div>
+            <span class="multiple-choice-result-chart-amount" @appearanceAnimation>{{option.amount}}</span>
+        </div>
+
+    </div>
+
+    <p-button type="button" style="margin-top: 100px;" (onClick)="generateRandomOptionsValues()">Update</p-button>
+
+</div>

@@ -1,0 +1,35 @@
+<div class="rating-question-result">
+    <div class="rating-question-result-header">
+        <div style="display: flex; align-items: center;">
+            <div class="index-number">
+                <p-badge [value]="questionResult.indexNumber.toString()"></p-badge>
+            </div>
+            <div class="question-type">
+                {{questionType}}
+            </div>
+        </div>
+
+        <div class="number-of-answers">
+            <span style="color: #5f5e5e;">{{questionResult.numberOfAnswers}}</span>
+            <div><span style="font-size: 0.8rem; color: #5f5e5e;">answers</span></div>
+        </div>
+    </div>
+
+    <div style="display: flex; flex-direction: column; justify-content: space-around; margin-bottom: 20px;">
+        <div class="rating-question-result-question-text">
+            {{questionResult.questionText}}
+        </div>
+
+        <div class="rating-question-result-rating">
+            <div class="rating-question-result-rating-value">
+                <div class="average"><span [className]="getRatingColor()">{{averageRating}}</span></div>
+                <div class="max">&nbsp;/&nbsp;{{maxRating}}</div>
+            </div>
+            <div style="font-size: 1.5rem;">Rating</div>
+        </div>
+
+    </div>
+
+</div>
+
+<!-- #FFD700 yellow  #B22222 red #00FF00 ?-->

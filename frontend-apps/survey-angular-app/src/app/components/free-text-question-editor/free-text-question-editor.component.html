@@ -1,0 +1,20 @@
+<div class="free-text-question-editor-container">
+
+    <form [formGroup]="freeTextQuestionFormGroup" (ngSubmit)="onSubmit($event)">
+        <div class="free-text-question-text-input">
+            <textarea rows="3" pInputTextarea formControlName="questionText"
+                placeholder="What do you want to ask?"></textarea>
+            <small class="p-error" *ngIf="questionText?.errors?.['required'] && questionText?.touched">
+                This field is required.
+            </small>
+            <small class="p-error" *ngIf="questionText?.errors?.['maxlength']">
+                Length must be less than 250
+            </small>
+        </div>
+
+        <div class="question-action-buttons">
+            <button pButton type="submit" label="Add" class="action-button p-button-raised blue-button"
+                [disabled]="freeTextQuestionFormGroup.invalid"></button>
+        </div>
+    </form>
+</div>

@@ -1,0 +1,56 @@
+.free-text-answer-container {
+    min-height: 100px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+
+.free-text-answer-header-container {
+    width: 100%;
+    padding: 5px;
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid #dee2e6;
+}
+
+.free-text-answer-header-container .index-number {
+    flex: 0 0 auto;
+    margin-left: 10px;
+    height: fit-content;
+}
+
+:host ::ng-deep .free-text-answer-header-container .index-number .p-badge {
+    background-color: #5cb85c;
+}
+
+.free-text-answer-header-container .question-type {
+    flex: 0 0 auto;
+    margin-left: 10px;
+    color: #495057;
+}
+
+.free-text-answer-text {
+    margin: 10px 10px 10px 50px;
+    color: #495057;
+    overflow: hidden;
+    word-wrap: break-word;
+    font-weight: 700;
+}
+
+.free-text-answer-text-input {
+    margin: 0 45px 10px 45px;
+}
+
+.free-text-answer-text-input textarea {
+    width: 100%;
+}
+
+@media (max-width: 600px) {
+    .free-text-answer-text {
+        margin-left: 10px;
+    }
+
+    .free-text-answer-text-input {
+        margin: 5px;
+    }
+}

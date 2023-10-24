@@ -1,0 +1,24 @@
+<div class="rating-question-editor-container">
+    <form [formGroup]="ratingQuestionFormGroup" (ngSubmit)="onSubmit($event)">
+        <div class="question-text-input">
+            <textarea rows="3" pInputTextarea formControlName="questionText"
+                placeholder="What do you want to rate?"></textarea>
+            <small class="p-error" *ngIf="questionText?.errors?.['required'] && questionText?.touched">
+                This field is required.
+            </small>
+            <small class="p-error" *ngIf="questionText?.errors?.['maxlength']">
+                Length must be less than 250
+            </small>
+        </div>
+
+        <div class="custom-rate">
+            <div class="title">I would like to rate it on a scale of 1 to </div>
+            <p-rating formControlName="maxRating" [stars]="10" [cancel]="false"></p-rating>
+        </div>
+
+        <div class="question-action-buttons">
+            <button pButton type="submit" label="Add" class="action-button p-button-raised blue-button"
+                [disabled]="ratingQuestionFormGroup.invalid"></button>
+        </div>
+    </form>
+</div>

@@ -1,0 +1,23 @@
+<div class="rating-answer-container">
+    <div class="rating-answer-header-container">
+        <div class="index-number">
+            <p-badge [value]="question.indexNumber.toString()"></p-badge>
+        </div>
+        <div class="question-type">
+            {{questionType}}
+        </div>
+    </div>
+
+    <div style="margin: 20px 0px;">
+        <div class="rating-answer-text">
+            {{question.text}}
+        </div>
+
+        <form [formGroup]="ratingAnswerFormGroup">
+            <div class="ratingt-answer-stars">
+                <p-rating formControlName="rating" [stars]="questionMaxRating" [cancel]="false"></p-rating>
+            </div>
+        </form>
+    </div>
+
+</div>

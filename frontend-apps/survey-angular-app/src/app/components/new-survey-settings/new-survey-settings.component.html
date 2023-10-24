@@ -1,0 +1,73 @@
+<div class="new-survey-settings-container">
+
+    <div class="new-survey-settings-title">
+        <div style="width: 100px; height: 5px; background-color: #a72a56"></div>
+        <div>CREATE YOUR SURVEY</div>
+    </div>
+
+    <div class="new-survey-settings-steps">
+        <p-steps [model]="surveySteps" [readonly]="true" [activeIndex]="1"></p-steps>
+    </div>
+
+    <div class="new-survey-settings-form">
+        <form [formGroup]="newSurveySettingsFormGroup" (ngSubmit)="onCreateSurvey($event)">
+            <div class="description-form-control">
+                <label>Description</label>
+                <textarea id="description" rows="3" pInputTextarea formControlName="description"></textarea>
+                <small class="p-error" *ngIf="description?.errors?.['maxlength']">Length must be less than or equal to
+                    1000</small>
+            </div>
+
+            <div class="expriration-date-form-control">
+                <div>
+                    <label>Use expiration date</label>
+                    <label class="switch" style="margin-left: 10px;">
+                        <input type="checkbox" formControlName="useExpirationDate">
+                        <span class="slider round"></span>
+                    </label>
+                </div>
+                <div class="survey-expiration-date" *ngIf="useExpirationDate">
+                    <p-calendar *ngIf="isDesktop" id="surveyExpirationDate" formControlName="surveyExpirationDate"
+                        [showTime]="true" [minDate]="expirationMinDate"></p-calendar>
+                    <p-calendar *ngIf="!isDesktop" id="surveyExpirationDate" formControlName="surveyExpirationDate"
+                        [showTime]="true" [touchUI]="true" [minDate]="expirationMinDate"></p-calendar>
+                    <div>
+                        <small class="p-error"
+                            *ngIf="surveyExpirationDate?.errors?.['expirationDateLessThanCurrent']">Can't be less than
+                            current date time</small>
+                    </div>
+                </div>
+            </div>
+
+            <div class="survey-result-access-form-control">
+                <div>
+                    <label>Protect the results with PIN code</label>
+                    <label class="switch" style="margin-left: 10px;">
+                        <input type="checkbox" formControlName="usePinCodeProtection">
+                        <span class="slider round"></span>
+                    </label>
+                </div>
+                <div class="pin-code" *ngIf="usePinCodeProtection">
+                    <input pInputText formControlName="pinCode" tooltipEvent="focus">
+                    <div>
+                        <small class="p-error" *ngIf="pinCode?.errors?.['required']">
+                            This field is required.
+                        </small>
+                        <small class="p-error" *ngIf="pinCode?.errors?.['maxLength']">
+                            Length must be less than or equal to 8
+                        </small>
+                    </div>
+                </div>
+            </div>
+
+            <div class="new-survey-settings-action-buttons">
+                <button pButton type="button" label="Go Back" class="p-button-raised p-button-text p-button-secondary"
+                    icon="pi pi-chevron-left" iconPos="left" (click)="goBack()"
+                    [disabled]="isCreateRequestSending"></button>
+                <button pButton type="submit" label="Create" class="p-button-success p-button-raised" icon="pi pi-plus"
+                    iconPos="right" [disabled]="newSurveySettingsFormGroup.invalid"
+                    [loading]="isCreateRequestSending"></button>
+            </div>
+        </form>
+    </div>
+</div>

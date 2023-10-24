@@ -1,0 +1,43 @@
+<div class="survey-answers-container">
+
+    <div class="survey-answers-item-container">
+        <div *ngFor="let question of questions; let i = index">
+            <div class="survey-answers-item" *ngIf="i === currentItemIndex" @answerItemAnimation>
+
+                <app-single-choice-answer *ngIf="question.questionType === QuestionType.SingleChoice"
+                    [question]="question" [answer]="answers[currentItemIndex]"
+                    (answerChange)="onAnswerChange($event)"></app-single-choice-answer>
+
+                <app-multiple-choice-answer *ngIf="question.questionType === QuestionType.MultipleChoice"
+                    [question]="question" [answer]="answers[currentItemIndex]"
+                    (answerChange)="onAnswerChange($event)"></app-multiple-choice-answer>
+
+                <app-free-text-answer *ngIf="question.questionType === QuestionType.FreeText" [question]="question"
+                    [answer]="answers[currentItemIndex]" (answerChange)="onAnswerChange($event)"></app-free-text-answer>
+
+                <app-rating-answer *ngIf="question.questionType === QuestionType.Rating" [question]="question"
+                    [answer]="answers[currentItemIndex]" (answerChange)="onAnswerChange($event)"></app-rating-answer>
+            </div>
+        </div>
+
+        <div class="survey-answers-item-bottom-info-container">
+            <span>{{answers.length}} of {{questions.length}} answered</span>
+        </div>
+    </div>
+
+    <div class="survey-answers-container-controls"
+        style="display: flex; flex-direction: row; justify-content: space-around;">
+
+        <p-button icon="pi pi-angle-left" styleClass="p-button-rounded p-button-text p-button-raised p-button-lg"
+            (onClick)="onPreviousClick()" [disabled]="isBackButtonDisabled"></p-button>
+
+        <p-button icon="pi pi-angle-right" styleClass="p-button-rounded p-button-text p-button-raised p-button-lg"
+            (onClick)="onNextClick()" [disabled]="isNextButtonDisabled" *ngIf="isNextButtonDisplayed"></p-button>
+
+        <p-button label="Submit" icon="pi pi-check" styleClass="p-button-raised p-button-success"
+            [disabled]="isSubmitButtonDisabled" [loading]="isSurveySubmitting" *ngIf="isSubmitButtonDisplayed"
+            (onClick)="submitAnswers()"></p-button>
+    </div>
+
+
+</div>

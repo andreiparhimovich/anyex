@@ -1,0 +1,67 @@
+.new-survey-links-container {
+    max-width: 600px;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+}
+
+.new-survey-links-title {
+    margin: 10px;
+    font-size: 1.5rem;
+}
+
+.new-survey-links-steps {
+    margin: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.new-survey-links-success-info {
+    color: #495057;
+    font-weight: 700;
+    margin-top: 50px;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+:host ::ng-deep .new-survey-links-success-info .pi-check-circle {
+    margin: 10px;
+    font-size: 5rem;
+    color: #5cb85c
+}
+
+.new-survey-links-inputs {
+    margin: 50px 0 30px 0;
+}
+
+.new-survey-form-control {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 1rem;
+}
+
+.new-survey-form-control label {
+    margin-bottom: 0.5rem;
+}
+
+.new-survey-links-action-buttons {
+    margin-top: 30px;
+    margin-bottom: 30px;
+    display: flex;
+    justify-content: space-between;
+}
+
+@media (max-width: 600px) {
+
+    .new-survey-links-action-buttons {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .new-survey-links-action-buttons .action-button {
+        width: 100%;
+        margin: 5px 0;
+    }
+}

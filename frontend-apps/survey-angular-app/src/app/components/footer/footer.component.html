@@ -1,0 +1,11 @@
+<footer class="footer">
+   <div></div>
+   <div class="logo" [innerHTML]="logoIconSvgContent"></div>
+   <div class="links">
+      <a [routerLink]="['/contact']" class="link">Contact Us</a>
+      <a [routerLink]="['/privacy']" class="link">Privacy</a>
+      <a [routerLink]="['/terms']" class="link">Terms</a>
+      &copy;&nbsp;{{currentYear}}
+   </div>
+   <div style="clear: both;"></div>
+</footer>

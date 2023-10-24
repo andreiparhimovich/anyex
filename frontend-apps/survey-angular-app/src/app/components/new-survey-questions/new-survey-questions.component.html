@@ -1,0 +1,61 @@
+<div class="new-survey-container">
+    <form [formGroup]="newSurveyFormGroup" (ngSubmit)="onGoNext($event)">
+
+        <div class="new-survey-title">
+            <div style="width: 100px; height: 5px; background-color: #a72a56"></div>
+            <div>CREATE YOUR SURVEY</div>
+        </div>
+
+        <div class="new-survey-steps">
+            <p-steps [model]="surveySteps" [readonly]="true"></p-steps>
+        </div>
+
+        <div class="new-survey-title-input-container">
+            <span class="p-float-label">
+                <input type="text" pInputText formControlName="surveyTitle">
+                <label>Survey Title</label>
+            </span>
+            <small class="p-error" *ngIf="surveyTitle?.errors?.['maxlength']">
+                Length must be less than 250
+            </small>
+        </div>
+
+        <div class="new-survey-question-previews-container">
+            <div *ngIf="isAnyQuestion" class="new-survey-question-number">
+                <span>Questions: {{ questions.length }} of {{maxNumberOfQuestions}}</span>
+            </div>
+            <div *ngFor="let question of questions" @appearanceAnimation>
+                <div [ngSwitch]="question.questionType">
+                    <app-single-choice-question-preview *ngSwitchCase="1" [question]="question"
+                        (delete)="onQuestionDelete($event)" />
+                    <app-multiple-choice-question-preview *ngSwitchCase="2" [question]="question"
+                        (delete)="onQuestionDelete($event)" />
+                    <app-rating-question-preview *ngSwitchCase="3" [question]="question"
+                        (delete)="onQuestionDelete($event)" />
+                    <app-free-text-question-preview *ngSwitchCase="4" [question]="question"
+                        (delete)="onQuestionDelete($event)" />
+                </div>
+            </div>
+
+            <div class="new-survey-question-editor-panel" *ngIf="isQuestionEditorDisplayed">
+                <app-question-editor-container
+                    (questionAdded)="onQuestionAdded($event)"></app-question-editor-container>
+            </div>
+
+            <div *ngIf="isAnyQuestion && !isQuestionEditorDisplayed" class="new-survey-question-preview-action-buttons">
+                <button pButton type="button" label="Add a Question" icon="pi pi-plus" (click)="addQuestionClick()"
+                    *ngIf="isAddQuestionButtonDisplayed" class="p-button-raised action-button"></button>
+                <button pButton type="submit" label="Go to Settings"
+                    class="p-button-success p-button-raised action-button" icon="pi pi-chevron-right" iconPos="right"
+                    [disabled]="newSurveyFormGroup.invalid || isMoreThanMaxNumberOfQuestions"></button>
+            </div>
+
+            <div *ngIf="isAnyQuestion && isQuestionEditorDisplayed" style="display: flex; justify-content: flex-end; margin: 20px 0;">
+                <button pButton type="submit" label="Go to Settings"
+                    class="p-button-success p-button-raised action-button" icon="pi pi-chevron-right" iconPos="right"
+                    [disabled]="newSurveyFormGroup.invalid || isMoreThanMaxNumberOfQuestions"></button>
+            </div>
+        </div>
+
+    </form>
+</div>

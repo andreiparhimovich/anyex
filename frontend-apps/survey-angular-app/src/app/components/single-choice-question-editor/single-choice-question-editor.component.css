@@ -1,0 +1,84 @@
+.single-choice-question-editor-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.single-choice-question-text-input {
+    margin: 10px 0;
+}
+
+.single-choice-question-text-input textarea {
+    width: 100%;
+}
+
+.single-choice-question-option-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.single-choice-question-option {
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.single-choice-question-option .remove-button {
+    width: 32px;
+    height: 32px;
+    margin-left: 10px;
+}
+
+.single-choice-question-option textarea {
+    width: 70%;
+    margin-left: 10px;
+}
+
+.single-choice-question-option-validation-message {
+    margin-left: 30px;
+}
+
+.single-choice-question-form-validation-message-container {
+    margin-left: 30px;
+    margin-top: 20px;
+}
+
+.question-action-buttons {
+    margin-top: 20px;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.question-action-buttons .action-button {
+    width: 150px;
+    margin: 0 5px;
+}
+
+.question-action-buttons .blue-button {
+    background-color: #2a56a7;
+}
+
+.question-action-buttons .blue-button:hover {
+    background-color: #20417d;
+}
+
+@media (max-width: 600px) {
+
+    .single-choice-question-option textarea {
+        width: 100%;
+    }
+
+    .single-choice-question-form-validation-message-container {
+        margin-left: 0;
+    }
+
+    .question-action-buttons {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .question-action-buttons .action-button {
+        width: 100%;
+        margin: 5px 0;
+    }
+}

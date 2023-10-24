@@ -1,0 +1,27 @@
+<div class="single-choice-answer-container">
+    <div class="single-choice-answer-header-container">
+        <div class="index-number">
+            <p-badge [value]="question.indexNumber.toString()"></p-badge>
+        </div>
+        <div class="question-type">
+            {{questionType}}
+        </div>
+    </div>
+
+    <div style="margin: 20px 0px;">
+        <div class="single-choice-answer-text">
+            {{question.text}}
+        </div>
+
+        <form [formGroup]="questionOptionsFormGroup">
+            <div class="single-choice-answer-options-container" #toggleButtons>
+                <div class="single-choice-answer-option" *ngFor="let option of question?.options">
+                    <p-toggleButton [formControlName]="option.indexNumber"
+                        [onLabel]="option.text"
+                        [offLabel]="option.text"></p-toggleButton>
+                </div>
+            </div>
+        </form>
+    </div>
+
+</div>

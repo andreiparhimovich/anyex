@@ -1,0 +1,32 @@
+<div class="free-text-question-result">
+    <div class="free-text-question-result-header">
+        <div style="display: flex; align-items: center;">
+            <div class="index-number">
+                <p-badge [value]="questionResult.indexNumber.toString()"></p-badge>
+            </div>
+            <div class="question-type">
+                {{questionType}}
+            </div>
+        </div>
+
+        <div class="number-of-answers">
+            <span style="color: #5f5e5e;">{{questionResult.numberOfAnswers}}</span>
+            <div><span style="font-size: 0.8rem; color: #5f5e5e;">answers</span></div>
+        </div>
+    </div>
+
+    <div class="free-text-question-result-question-text">
+        {{questionResult.questionText}}
+    </div>
+
+    <div class="free-text-question-results-answers">
+        <p-table [value]="answers" [scrollable]="true" scrollHeight="300px">
+            <ng-template pTemplate="body" let-answer>
+                <tr>
+                    <td>{{answer}}</td>
+                </tr>
+            </ng-template>
+        </p-table>
+    </div>
+
+</div>

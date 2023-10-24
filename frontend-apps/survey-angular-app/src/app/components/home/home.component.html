@@ -1,0 +1,106 @@
+<div class="home-container">
+    <div class="home-container-1">
+
+        <div class="home-title-container">
+
+            <div class="home-title">
+                <div style="font-size: 3rem; font-weight: 600; color: #2a56a7;">Welcome to Quicksur</div>
+                <div style="font-size: 2.5rem; color: #2a56a7;">Create Online Surveys with Ease</div>
+                <div style="max-width: 500px; margin-top: 1rem; color: #495057">
+                    <b>Quicksur</b> allows users to easily create quick and free surveys.
+                    With just a few clicks, you can design and publish a survey to gather instant online results from
+                    your target audience
+                </div>
+            </div>
+
+            <div style="margin-top: 2rem;">
+                <button pButton type="button" class="p-button-raised p-button-success" label="Create Your Survey"
+                    (click)="createNewSurvey()"></button>
+            </div>
+
+        </div>
+
+        <p-image class="landing-image-1" src="assets/landing_1.webp" alt="Image" width="500"></p-image>
+    </div>
+
+    <div class="home-container-2">
+        <div style="margin: 10px;">
+            <p-card header="Simplicity">
+                <p>
+                    Create surveys with ease, no technical expertise required.
+                </p>
+            </p-card>
+        </div>
+        <div style="margin: 10px;">
+            <p-card header="Real-time results">
+                <p>
+                    Access and analyze survey responses instantly as they come in
+                </p>
+            </p-card>
+        </div>
+        <div style="margin: 10px;">
+            <p-card header="Free">
+                <p>
+                    Enjoy the benefits of our survey platform without any cost
+                </p>
+            </p-card>
+        </div>
+    </div>
+
+    <div class="home-container-3" style="display: flex; flex-direction: column; align-items: center; margin-top: 40px;">
+        <div style="font-size: 2.5rem; color: #28547a">How to use:</div>
+
+        <div style="display: flex; margin-top: 40px;">
+            <div class="step-number">1</div>
+            <div style="display: flex; flex-direction: column;">
+                <div style="font-size: 2rem; color: #28547a;">Add Questions</div>
+                <div style="color:#495057; max-width: 300px;">Start by adding your desired questions to the survey. You
+                    can choose from some
+                    question types such as
+                    multiple-choice, single-choice, free-text, or rating questions.</div>
+            </div>
+        </div>
+
+        <div style="display: flex; margin-top: 40px;">
+            <div class="step-number">2</div>
+            <div style="display: flex; flex-direction: column;">
+                <div style="font-size: 2rem; color: #28547a;">Adjust Settings</div>
+                <div style="color:#495057; max-width: 300px;">
+                    <p>Provide a concise and informative description to set the context for your survey.</p>
+                    <p>Set an expiration date for your survey to control the duration during which participants can
+                        submit their responses.</p>
+                    <p>Protect your survey results by enabling result protection with a pin code.</p>
+                </div>
+            </div>
+        </div>
+
+        <div style="display: flex; margin-top: 40px;">
+            <div class="step-number">3</div>
+            <div style="display: flex; flex-direction: column;">
+                <div style="font-size: 2rem; color: #28547a;">Get Links</div>
+                <div style="color:#495057; max-width: 300px;">
+                    <p>Once you're satisfied with your survey, generate unique links to share with your audience. Use
+                        these links in emails, social media, or embed them on your website. Collect responses
+                        conveniently and effortlessly.</p>
+                </div>
+            </div>
+        </div>
+
+        <div style="display: flex; margin-top: 40px;">
+            <div class="step-number">4</div>
+            <div style="display: flex; flex-direction: column;">
+                <div style="font-size: 2rem; color: #28547a;">Real-time Results</div>
+                <div style="color:#495057; max-width: 300px;">
+                    <p>Once you've created a survey and started collecting responses, you can effortlessly view the
+                        results in real-time on a dedicated page.</p>
+                </div>
+            </div>
+        </div>
+
+        <div style="margin: 2rem;">
+            <button pButton type="button" class="p-button-raised p-button-success" label="Create Your Survey"
+                (click)="createNewSurvey()"></button>
+        </div>
+
+    </div>
+</div>

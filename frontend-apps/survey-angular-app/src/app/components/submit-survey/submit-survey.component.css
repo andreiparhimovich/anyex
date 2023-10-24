@@ -1,0 +1,68 @@
+.submit-survey-container {
+    margin: auto;
+    max-width: 700px;
+    display: flex;
+    flex-direction: column;
+}
+
+.submit-survey-progress-spinner {
+    align-self: center;
+}
+
+.submit-survey-title {
+    margin: 10px 0;
+    font-size: 1.5rem;
+}
+
+.submit-survey-instructions {
+    color: #495057;
+    font-size: 1.1rem;
+}
+
+:host ::ng-deep .p-scrollpanel.custombar1 .p-scrollpanel-bar {
+    background-color: red;
+}
+
+.submit-survey-success-info-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.submit-survey-success-info-container .p-button {
+    margin-top: 20px;
+}
+
+.submit-survey-success-info {
+    color: #495057;
+    font-weight: 700;
+    margin-top: 50px;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+:host ::ng-deep .submit-survey-success-info .pi-check-circle {
+    margin: 10px;
+    font-size: 5rem;
+    color: #5cb85c
+}
+
+.submit-survey-expired {
+    color: #495057;
+    font-weight: 700;
+    margin-top: 50px;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+.submit-survey-description {
+    margin: 20px 0;
+}
+
+:host ::ng-deep .submit-survey-expired .pi-info-circle {
+    margin: 10px;
+    font-size: 5rem;
+    color: #ffc581
+}

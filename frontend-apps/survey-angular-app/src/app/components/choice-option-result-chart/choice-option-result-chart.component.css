@@ -1,0 +1,31 @@
+.multiple-choice-option-result-chart {
+    display: flex;
+    align-items: center;
+}
+
+.multiple-choice-option-result-chart-block {
+    background-color: #f7f6f6;
+    height: 20px;
+    width: 100%;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+}
+
+.multiple-choice-option-result-chart-percentage-block {
+    background-color: #1cdd4c;
+    height: 20px;
+    border-radius: 4px;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.multiple-choice-option-result-chart-percentage-block-value {
+    color: #ffffff;
+    margin-right: 10px;
+    font-size: 0.85rem;
+}
+
+.multiple-choice-option-result-chart-amount {
+    margin-left: 10px;
+}

@@ -1,0 +1,33 @@
+<div class="survey-results-pincode-container">
+    <div class="survey-results-pincode-title">
+        <span>To continue, please provide a valid PIN code</span>
+    </div>
+    <div class="survey-results-pincode-subtitle">
+        <span>In order to obtain the survey results, we kindly request that you provide the correct PIN code. During the
+            survey creation process a personalized PIN code for accessing the survey results was provided.</span>
+    </div>
+
+    <form [formGroup]="surveyPinCodeFromGroup" (ngSubmit)="onSubmit()">
+        <div style="display: flex; flex-direction: column; align-items: center;">
+            <div class="survey-results-pincode-input">
+                <input type="text" pInputText styleClass="p-inputtext-lg" formControlName="pinCode" />
+                <div *ngIf="isPinCodeInvalid">
+                    <small class="p-error">
+                        PIN code is invalid, please try again
+                    </small>
+                </div>
+                <div *ngIf="pinCode?.errors?.['required'] && pinCode?.touched">
+                    <small class="p-error">
+                        PIN code is required
+                    </small>
+                </div>
+            </div>
+    
+            <div class="survey-results-action-buttons">
+                <button type="submit" pButton label="Verify PIN code" class="p-button-raised p-button-success"
+                    [loading]="isLoading" [disabled]="surveyPinCodeFromGroup.invalid"></button>
+            </div>
+        </div>
+    </form>
+
+</div>

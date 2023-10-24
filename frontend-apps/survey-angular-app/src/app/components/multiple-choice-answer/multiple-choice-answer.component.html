@@ -1,0 +1,28 @@
+<div class="multiple-choice-answer-container">
+    <div class="multiple-choice-answer-header-container">
+        <div class="index-number">
+            <p-badge [value]="question.indexNumber.toString()"></p-badge>
+        </div>
+        <div class="question-type">
+            {{questionType}}
+        </div>
+    </div>
+
+    <div style="display: flex; flex-direction: column; justify-content: space-between;">
+        <div class="multiple-choice-answer-text">
+            {{question.text}}
+        </div>
+
+        <form [formGroup]="questionOptionsFormGroup">
+            <div class="multiple-choice-answer-options-container" #toggleButtons>
+                <div class="multiple-choice-answer-option" *ngFor="let option of question?.options">
+                    <p-toggleButton [formControlName]="option.indexNumber"
+                        [onLabel]="option.text"
+                        [offLabel]="option.text"></p-toggleButton>
+                </div>
+            </div>
+        </form>
+    </div>
+
+
+</div>

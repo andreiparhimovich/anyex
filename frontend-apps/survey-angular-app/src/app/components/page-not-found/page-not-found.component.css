@@ -1,0 +1,19 @@
+.not-fount-image {
+    margin: auto;
+}
+
+.not-found-text {
+    display: none;
+}
+
+@media (max-width: 600px) {
+    .not-fount-image {
+        display: none;
+    }
+
+    .not-found-text {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+}

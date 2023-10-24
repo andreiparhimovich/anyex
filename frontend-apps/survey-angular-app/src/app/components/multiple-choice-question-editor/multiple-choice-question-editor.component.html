@@ -1,0 +1,48 @@
+<div class="multiple-choice-question-editor-container">
+    <form [formGroup]="multipleChoiceQuestionFormGroup" (ngSubmit)="onSubmit($event)">
+
+        <div class="multiple-choice-question-text-input">
+            <textarea rows="3" pInputTextarea formControlName="questionText"
+                placeholder="What do you want to ask?"></textarea>
+            <small class="p-error" *ngIf="questionText?.errors?.['required'] && questionText?.touched">
+                This field is required.
+            </small>
+            <small class="p-error" *ngIf="questionText?.errors?.['maxlength']">
+                Length must be less than 250
+            </small>
+        </div>
+
+        <div class="multiple-choice-question-option-container" *ngFor="let option of questionOptions">
+            <div class="multiple-choice-question-option">
+                <p-checkbox [disabled]="true" [value]="false"></p-checkbox>
+                <textarea rows="1" pInputTextarea placeholder="Add option" [formControlName]="option.formFieldName"
+                    (ngModelChange)="onOptionTextChange($event, option.indexNumber)"></textarea>
+                <button pButton pRipple type="button" icon="pi pi-times"
+                    class="p-button-rounded p-button-danger p-button-text remove-button" (click)="removeOption(option.indexNumber)"
+                    *ngIf="option.isPossibleToDelete"></button>
+            </div>
+            <div class="multiple-choice-question-option-validation-message">
+                <!-- keep the code below herer as an example how to add validation. Then should be validated by max length-->
+                <small class="p-error"
+                    *ngIf="multipleChoiceQuestionFormGroup.controls[option.formFieldName]?.errors?.['maxlength'] && multipleChoiceQuestionFormGroup.controls[option.formFieldName]?.touched">
+                    Length must be less than 250
+                </small>
+            </div>
+        </div>
+
+
+
+        <div class="multiple-choice-question-form-validation-message-container">
+            <p-message *ngIf="multipleChoiceQuestionFormGroup?.errors?.['atLeastOneOption']" severity="warn"
+                text="Must be at least one option"></p-message>
+        </div>
+
+        <div class="question-action-buttons">
+            <button pButton type="button" class="action-button p-button-raised p-button-secondary p-button-text"
+                label="Reset" (click)="resetClickHandler()"></button>
+            <button pButton type="submit" class="action-button p-button-raised blue-button" label="Add"
+                [disabled]="multipleChoiceQuestionFormGroup.invalid"></button>
+        </div>
+
+    </form>
+</div>

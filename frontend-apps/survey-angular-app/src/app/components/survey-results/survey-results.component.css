@@ -1,0 +1,28 @@
+.survey-results-container {
+    margin: auto;
+    max-width: 700px;
+    display: flex;
+    flex-direction: column;
+}
+
+.survey-results-title {
+    margin: 10px 0;
+    font-size: 1.5rem;
+}
+
+.survey-results-tiles {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.survey-results-tiles .tile {
+    margin: 10px;
+    width: 100px;
+    height: 100px;
+    border: 1px solid #dee2e6;
+    border-radius: 4px 4px 4px 4px;
+    box-shadow: 1px 1px 4px 2px rgba(0, 0, 0, 0.15);
+    padding: 10px;
+    text-align: center;
+}

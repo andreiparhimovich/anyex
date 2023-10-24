@@ -1,0 +1,31 @@
+<div class="choice-question-result">
+    <div class="choice-question-result-header">
+        <div style="display: flex; align-items: center;">
+            <div class="index-number">
+                <p-badge [value]="questionResult.indexNumber.toString()"></p-badge>
+            </div>
+            <div class="question-type">
+                {{questionType}}
+            </div>
+        </div>
+
+        <div class="number-of-answers">
+            <span style="color: #5f5e5e;">{{questionResult.numberOfAnswers}}</span>
+            <div><span style="font-size: 0.8rem; color: #5f5e5e;">answers</span></div>
+        </div>
+    </div>
+
+    <div style="display: flex; flex-direction: column; justify-content: space-around;">
+        <div class="choice-question-result-question-text">
+            {{questionResult.questionText}}
+        </div>
+
+        <div class="choice-question-result-options-container">
+            <div class="choice-question-answer-option" *ngFor="let option of questionResult.optionsResults">
+                <app-choice-option-result-chart [index]="option.indexNumber" [optionText]="option.optionText"
+                    [percentage]="option.percentage" [answersAmount]="option.numberOfAnswers">
+                </app-choice-option-result-chart>
+            </div>
+        </div>
+    </div>
+</div>

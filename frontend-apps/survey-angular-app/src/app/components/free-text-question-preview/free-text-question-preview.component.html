@@ -1,0 +1,16 @@
+<div class="comment-question-preview-container">
+    <div class="comment-question-preview-header-container">
+        <div class="index-number">
+            <p-badge [value]="question.indexNumber.toString()" severity="warning"></p-badge>
+        </div>
+        <div class="question-type">
+            {{questionType}}
+        </div>
+        <div class="comment-question-preview-header-menu">
+            <button pButton pRipple type="button" icon="pi pi-times"
+                class="p-button-rounded p-button-danger p-button-text" (click)="onDelete()"></button>
+        </div>
+    </div>
+
+    <div class="comment-question-preview-text">{{ question.text }}</div>
+</div>

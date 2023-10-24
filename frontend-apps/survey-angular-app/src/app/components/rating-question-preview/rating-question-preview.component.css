@@ -1,0 +1,85 @@
+.rating-question-preview-container {
+    margin-top: 10px;
+    min-height: 100px;
+    border: 1px solid #dee2e6;
+    border-radius: 4px 4px 4px 4px;
+    border-left: 5px solid #2a56a7;
+    box-shadow: 1px 1px 4px 2px rgba(0, 0, 0, 0.15);
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.rating-question-preview-header-container {
+    width: 100%;
+    padding: 5px;
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid #dee2e6;
+}
+
+.rating-question-preview-header-container .index-number {
+    flex: 0 0 auto;
+    margin-left: 10px;
+    height: fit-content;
+}
+
+:host ::ng-deep .rating-question-preview-header-container .index-number .p-badge {
+    background-color: #5cb85c;
+}
+
+.rating-question-preview-header-container .question-type {
+    flex: 0 0 auto;
+    margin-left: 10px;
+    color: #495057;
+}
+
+.rating-question-preview-header-container .rating-question-preview-header-menu {
+    margin-left: auto;
+}
+
+.rating-question-preview-header-container .rating-question-preview-header-menu button {
+    width: 32px;
+    height: 32px;
+    margin-right: 10px;
+    margin-right: auto;
+}
+
+.rating-question-preview-text {
+    margin-top: 10px;
+    margin-left: 15px;
+    color: #495057;
+    overflow: hidden;
+    word-wrap: break-word;
+    font-weight: 700;
+}
+
+.rating-question-preview-stars-container {
+    padding: 15px;
+}
+
+:host ::ng-deep .rating-question-preview-stars-container .p-rating-icon {
+    font-size: 32px;
+}
+
+:host ::ng-deep .rating-question-preview-stars-container .p-rating-icon.pi-star-fill {
+    color: #ffc581 !important;
+}
+
+:host ::ng-deep .rating-question-preview-stars-container .p-rating:not(.p-disabled):not(.p-readonly) .p-rating-icon:hover {
+    color: #ffc581 !important;
+}
+
+@media (max-width: 600px) {
+
+    :host ::ng-deep .rating-question-preview-stars-container .p-rating-icon {
+        font-size: 27px;
+    }
+}
+
+@media (max-width: 500px) {
+    :host ::ng-deep .rating-question-preview-stars-container .p-rating-icon {
+        font-size: 24px;
+    }
+}

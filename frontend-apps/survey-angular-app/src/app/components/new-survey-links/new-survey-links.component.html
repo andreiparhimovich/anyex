@@ -1,0 +1,41 @@
+<div class="new-survey-links-container">
+
+    <div class="new-survey-links-title">
+        <div style="width: 100px; height: 5px; background-color: #a72a56"></div>
+        <div>CREATE YOUR SURVEY</div>
+    </div>
+    
+    <div class="new-survey-links-steps">
+        <p-steps [model]="surveySteps" [readonly]="true" [activeIndex]="2"></p-steps>
+    </div>
+
+    <div class="new-survey-links-success-info">
+        <div><i class="pi pi-check-circle"></i></div>
+        <div>Your survey has been created successfully!</div>
+    </div>
+
+    <div class="new-survey-links-inputs">
+        <div class="new-survey-form-control">
+            <label>Survey Link</label>
+            <div class="p-inputgroup">
+                <input type="text" pInputText [readOnly]="true" [value]="surveyUrl" />
+                <button type="button" pButton icon="pi pi-copy" styleClass="p-button-warn"
+                    (click)="copySurveyLinkToClipboard()"></button>
+            </div>
+        </div>
+        <div class="new-survey-form-control">
+            <label>Survey Results Link</label>
+            <div class="p-inputgroup">
+                <input type="text" pInputText [readOnly]="true" [value]="surveyResultsUrl" />
+                <button type="button" pButton icon="pi pi-copy" styleClass="p-button-warn"
+                    (click)="copySurveyResultLinkToClipboard()"></button>
+            </div>
+        </div>
+    </div>
+
+    <div class="new-survey-links-action-buttons">
+        <button pButton label="Open Survey" class="p-button-raised action-button" icon="pi pi-external-link" (click)="goToSurvey()"></button>
+        <button pButton type="button" label="Create a New Survey" class="p-button-raised p-button-success action-button"
+            icon="pi pi-plus" iconPos="left" (click)="createNewSurvey()"></button>
+    </div>
+</div>
